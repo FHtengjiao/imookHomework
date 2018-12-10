@@ -1,4 +1,4 @@
-package com.xtjnoob.tools;
+package com.xtjnoob.global;
 
 import com.xtjnoob.entity.User;
 
