@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>新建</title>
+        <title>编辑科室</title>
         <link rel="stylesheet" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" href="../../../css/add.css">
         <script src="../../../js/jquery-1.8.3.min.js"></script>
@@ -42,11 +42,13 @@
                 </div>
                 <div class="form-group">
                     <label for="category_id" class="col-sm-2 control-label">分类 ：</label>
-                    <select id="category_id" name="category_id" class="col-sm-2 form-control" style="width: auto">
-                        <c:forEach items="${CATEGORIES}" var="category">
-                            <option id="option_${category.id}" value="${category.id}">${category.name}</option>
-                        </c:forEach>
-                    </select>
+                    <div class="col-sm-8">
+                        <select id="category_id" name="category_id" class="col-sm-2 form-control" style="width: auto">
+                            <c:forEach items="${CATEGORIES}" var="category">
+                                <option id="option_${category.id}" value="${category.id}">${category.name}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">

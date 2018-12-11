@@ -44,8 +44,9 @@ public class DepartmentController {
 
     public void toEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
+        String categoryId = request.getParameter("category_id");
 
-        if (StringUtils.isNotEmpty(id)) {
+        if (StringUtils.isNotEmpty(id) && StringUtils.isNotEmpty(categoryId)) {
             try {
                 long departmentId = Long.parseLong(id);
                 Department department = departmentService.getDepartmentById(departmentId);
@@ -54,10 +55,10 @@ public class DepartmentController {
                 request.setAttribute("DEPARTMENT", department);
                 request.getRequestDispatcher("/WEB-INF/views/biz/department_edit.jsp").forward(request, response);
             } catch (NumberFormatException e) {
-                response.sendRedirect("/department/list.do");
+                response.sendRedirect("/department/list.do?category_id="+categoryId);
             }
         } else {
-            response.sendRedirect("/department/list.do");
+            response.sendRedirect("/department/list.do?category_id="+categoryId);
         }
     }
 
@@ -73,12 +74,12 @@ public class DepartmentController {
                 department.setName(name);
                 department.setCategoryId(Long.parseLong(categoryId));
                 departmentService.update(department);
-                response.sendRedirect("/department/list.do");
+                response.sendRedirect("/department/list.do?category_id="+categoryId);
             } catch (NumberFormatException e) {
-                response.sendRedirect("/department/toEdit.do");
+                response.sendRedirect("/department/toEdit.do?id="+id+"&category_id="+categoryId);
             }
         } else {
-            response.sendRedirect("/department/toEdit.do?id=id");
+            response.sendRedirect("/department/toEdit.do?id="+id+"&category_id="+categoryId);
         }
     }
 
@@ -105,17 +106,18 @@ public class DepartmentController {
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
+        String categoryId = request.getParameter("category_id");
 
-        if (StringUtils.isNotEmpty(id)) {
+        if (StringUtils.isNotEmpty(id) && StringUtils.isNotEmpty(categoryId)) {
             try {
                 long departmentId = Long.parseLong(id);
                 departmentService.delete(departmentId);
-                response.sendRedirect("/department/list.do");
+                response.sendRedirect("/department/list.do?category_id="+categoryId);
             } catch (NumberFormatException e) {
-                response.sendRedirect("/department/list.do");
+                response.sendRedirect("/department/list.do?category_id="+categoryId);
             }
         } else {
-            response.sendRedirect("/department/list.do");
+            response.sendRedirect("/department/list.do?category_id="+categoryId);
         }
     }
 }

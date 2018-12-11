@@ -23,7 +23,7 @@
                 <p>请小心的编辑科室分类记录，要是编辑一个错误的就不好了。。。</p>
             </div>
             <div class="page-header">
-                <h3><small>编辑</small></h3>
+                <h3><small>编辑科室分类</small></h3>
             </div>
             <form class="form-horizontal" action="${pageContext.request.contextPath}/category/edit.do" method="post">
                 <input type="hidden" name="id" value="${CATEGORY.id}">

@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>新建</title>
+        <title>新建科室</title>
         <link rel="stylesheet" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" href="../../../css/add.css">
     </head>

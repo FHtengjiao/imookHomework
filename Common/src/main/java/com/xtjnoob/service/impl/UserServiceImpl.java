@@ -12,7 +12,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-    public User Login(String account, String password) {
+    public User login(String account, String password) {
         User user = userDao.getUserByAccount(account);
         if (user == null) {
             return null;

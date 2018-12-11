@@ -50,8 +50,8 @@
                                 <td><fmt:formatDate value="${department.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                 <td><fmt:formatDate value="${department.updateTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                 <td>
-                                    <a href="${pageContext.request.contextPath}/department/toEdit.do?id=${department.id}">修改</a>&nbsp;&nbsp;
-                                    <a href="${pageContext.request.contextPath}/department/delete.do?id=${department.id}">删除</a>
+                                    <a href="${pageContext.request.contextPath}/department/toEdit.do?id=${department.id}&category_id=${department.categoryId}">修改</a>&nbsp;&nbsp;
+                                    <a href="${pageContext.request.contextPath}/department/delete.do?id=${department.id}&category_id=${department.categoryId}">删除</a>
                                 </td>
                             </tr>
                         </c:forEach>
