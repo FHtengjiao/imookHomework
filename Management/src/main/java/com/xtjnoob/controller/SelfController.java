@@ -35,6 +35,6 @@ public class SelfController {
     }
 
     public void toLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("");
+        request.getRequestDispatcher("/WEB-INF/views/biz/login.jsp").forward(request, response);
     }
 }

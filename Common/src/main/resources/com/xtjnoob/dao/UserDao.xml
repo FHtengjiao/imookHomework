@@ -3,7 +3,7 @@
 <mapper namespace="com.xtjnoob.dao.UserDao">
 
     <resultMap id="resultMap" type="User">
-        <id property="id" column="id" javaType="Long"/>
+        <!--<id property="id" column="id" javaType="Long"/>-->
         <result property="account" column="account" javaType="String"/>
         <result property="password" column="password" javaType="String"/>
     </resultMap>
